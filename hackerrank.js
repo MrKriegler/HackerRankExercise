@@ -17,10 +17,8 @@ function minimumBribes(q) {
   let swaps = 0;
   let swapped = false;
   for (let i = 0; i < q.length; i++) {
-      let myPos = q[i];
       if (q[i] - (i + 1) > 2 ) {
-        console.log("Too chaotic");
-        return;
+        return "Too chaotic";
       }
   }
   // user bubble sort to track number of swaps
