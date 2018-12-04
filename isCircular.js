@@ -1,6 +1,6 @@
 // Do the given commands give a circular route
 // return YES or NO
-// isCircular(["LGRG", "RG", "LGR", "GGGGR"])
+isCircular(["LGRG", "RG", "LGR", "GGGGR"])
 let movesEnum = {
   N : 0,
   W : 1,
@@ -25,7 +25,8 @@ function isCircular(commands) {
         else if (cmd === 'L') {
           direction = (4 + (direction - 1)) % 4
         }
-        else {
+
+        else { // command is 'G'
           switch(direction){
             case movesEnum['N']:
               x++;
@@ -41,10 +42,10 @@ function isCircular(commands) {
               break;
           }
         }
-
       })
       attempts++;
     }
+
     return (x === 0 && y === 0) ? "YES" : "NO";
   });
 }
