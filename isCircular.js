@@ -1,4 +1,6 @@
 // Do the given commands give a circular route
+// return YES or NO
+// isCircular(["LGRG", "RG", "LGR", "GGGGR"])
 let movesEnum = {
   N : 0,
   W : 1,
@@ -13,13 +15,15 @@ function isCircular(commands) {
     let direction = 0;
     let attempts = 0;
     command = command.split("");
+    // make sure we run the cmd 4 times
+    // 90 degrees x 4 === 360
     while(attempts < 4) {
       command.map((cmd)=>{
         if (cmd === 'R') {
           direction = (direction + 1) % 4
         }
         else if (cmd === 'L') {
-          direction = (direction - 1) % 4
+          direction = (4 + (direction - 1)) % 4
         }
         else {
           switch(direction){
@@ -45,4 +49,3 @@ function isCircular(commands) {
   });
 }
 
-isCircular(["LGRG", "RG", "LGR", "GGGGR"])
