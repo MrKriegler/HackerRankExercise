@@ -16,7 +16,7 @@ function isCircular(commands) {
     let attempts = 0;
     command = command.split("");
     // make sure we run the cmd 4 times
-    // 90 degrees x 4 === (360/0)
+    // 90 degrees x 4 === (360|0)
     while(attempts < 4) {
       command.map((cmd)=>{
         if (cmd === 'R') {
