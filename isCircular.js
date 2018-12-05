@@ -26,7 +26,7 @@ function isCircular(commands) {
           direction = (4 + (direction - 1)) % 4;
         }
 
-        else { // command is 'G'
+        else { // cmd is 'G'
           switch(direction){
             case movesEnum['N']:
               x++;
