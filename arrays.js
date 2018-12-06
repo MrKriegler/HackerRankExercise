@@ -1,4 +1,36 @@
 //Challenges in the array section
+// 2D array hourglass
+function hourglassSum(arr) {
+  let totals = [];
+  for (let i = 0; i < 4; i++) {
+      const [L0, L1, L2] = arr;
+      let temp0 = [...L0];
+      let temp1 = [...L1];
+      let temp2 = [...L2];
+
+      for (let y = 0; y < 4; y++) {
+          let [e, r, t] = temp0;
+
+          const top = e + r + t;
+
+          let [h, j] = temp1;
+
+          let [o, p, l] = temp2;
+          const bottom = o + p + l;
+
+          totals.push(top + j + bottom);
+
+          temp0.shift();
+          temp1.shift();
+          temp2.shift();
+      }
+
+      arr.shift()
+  }
+
+  return Math.max(...totals);
+}
+
 // Complete the rotLeft function below.
 function rotLeft(a, d) {
   for (let i = 0; i < d; i++) {
